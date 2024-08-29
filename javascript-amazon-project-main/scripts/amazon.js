@@ -1,5 +1,6 @@
-// import cart variable from the cart file
-import { cart } from "../data/cart.js";
+// import Cart & Product variable from the data file
+import {cart} from "../data/cart.js";
+import {products} from "../data/products.js";
 
 
 // Generates HTML using JS
