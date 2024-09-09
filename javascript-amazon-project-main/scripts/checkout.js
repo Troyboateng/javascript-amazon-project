@@ -2,7 +2,19 @@ import { cart } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { formatCurrency } from "./utils/money.js";
 import { removeFromCart } from "../data/cart.js";
+import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js'
+import { deliveryOptions } from "../data/deliveryOptions.js";
 
+
+// Using the DayJS external library
+const today = dayjs();
+
+today.add();
+const deliveryDate = today.add(7, 'days');
+console.log(deliveryDate.format('dddd, MMMM D'));
+
+
+// Generating Cart items onto HMTL page using JS
 let cartSummaryHTML = '';
 
 cart.forEach((cartItem) => {
@@ -172,6 +184,12 @@ cart.forEach((cartItem) => {
           </div>
     `;
 });
+
+// function for generating delivery options in HTML
+
+function deliveryOptionsHMTL (){
+
+}
 
 document.querySelector('.js-order-summary').innerHTML = cartSummaryHTML;
 
